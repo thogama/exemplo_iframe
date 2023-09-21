@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+
+            var iframeURL = "https://stg.leorad.com.br/f07b0810-b49e-4c4e-80aa-012f61517d7e";
+
+            var iframeElement = document.querySelector('iframe');
+            iframeElement.src = iframeURL;
+
+
+
+            // receber msg
+            window.addEventListener('message', function (event) {
+
+                console.log('Resultado da função: ', event.data);
+                document.getElementById("target").innerHTML = event.data
+
+            }, false);
+
+            ;
+
+        });
+    </script>
+</head>
+
+<body>
+    <iframe allow="clipboard-write; microphone; fullscreen; encrypted-media" allowfullscreen="true"
+        mozallowfullscreen="true" webkitallowfullscreen="true" frameborder="0" style="height: 50vh;width: 100%;"
+        src=""></iframe>
+
+    <h1 id="target">
+        texto
+    </h1>
+</body>
+
+</html>
